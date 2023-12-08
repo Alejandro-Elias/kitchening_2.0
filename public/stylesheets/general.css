@@ -1,0 +1,29 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --gris:  #928f8a;
+    --red:  #b71e14;
+    --gris_oscuro:  #342920;
+}
+
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-image: url("/img/bg-body.png");
+    max-width: 1180px;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+
+
+
+
