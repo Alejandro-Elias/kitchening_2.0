@@ -5,6 +5,6 @@ const { index, cart } = require('../controllers/indexController')
 /* / */
 router
   .get("/", index)
-  .get("/cart",cart)
+  .get("/carrito",cart)
   
 module.exports = router;
