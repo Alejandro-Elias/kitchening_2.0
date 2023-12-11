@@ -57,8 +57,10 @@ header {
 
 .banner {
     display: none;
-    width: 100%;
-    padding: 0 30px 30px;
+    width: 95%;
+    margin: 0 auto;
+    box-shadow: 1px 1px 10px;
+    margin-bottom: 30px;
 }
 
 @media (min-width: 768px) {

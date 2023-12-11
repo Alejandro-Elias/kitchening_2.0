@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ES">
+
+<%- include('./partials/head',{ title : 'Dashboard' }) %>
+
+
+  <body class="mx-auto">
+    <%- include('./partials/header-admin') %>
+      <main class="container">
+        <section class="row my-5">
+          <div class="col-12 col-md-10 mx-auto">
+            <div class="card shadow rounded">
+              <div class="card-header d-flex justify-content-between">
+               
+               <!--  <nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+                  <ol class="breadcrumb">
+                    <li class="breadcrumb-item " ><a class="text-primary" href="/dashboard";">Home</a></li>
+                  </ol>
+                </nav> -->
+                
+                <% if (locals.keyword) { %>
+                  <h4 class="cart-title">Resultado para: <%= keyword %></h4>
+                  <% } else { %>
+                    <h4 class="cart-title">Restaurantes %></h4>
+                    <% } %>
+                    <a class="btn btn-outline-primary" href="/productos/agregar">Nuevo</a>
+              </div>
+              <div class="p-3 pb-0 table-responsive">
+
+                <% if (products.length) { %>
+                 <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th scope="col">ID</th>
+                      <th scope="col">Nombre</th>
+                      <th scope="col">Dirección</th>
+                      <th scope="col">Categoría</th>
+                      <th scope="col">Acciones</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <% products.forEach(({id,name,address,category, mainImage,description, phone})=>
+                      { %>
+                      <tr>
+                        <th scope="row">
+                          <%= id %>
+                        </th>
+                        <td>
+                          <%= name %>
+                        </td>
+                        <td>
+                          <%= address %>
+                        </td>
+                        <td>
+                          <%= category %>
+                        </td>
+                        <td>
+                          <div class="d-flex gap-2">
+                            <a class="btn btn-sm btn-outline-primary" data-bs-toggle="modal"
+                              data-bs-target="#exampleModal<%= id %>">
+                              <i class="fa-solid fa-eye"></i>
+                            </a>
+                            <a class="btn btn-sm btn-outline-warning" href="/productos/editar/<%= id %>"><i
+                                class="fa-solid fa-pencil"></i></a>
+                            <a class="btn btn-sm btn-outline-danger"" href=" /productos/eliminar/<%=id %>"><i
+                                class="fa-solid fa-trash"></i></a>
+                            <%- include('./partials/modal-show-product-admin',{ id, name, address, category, mainImage,
+                              description, phone }) %>
+                          </div>
+                        </td>
+                      </tr>
+                      <% }) %>
+
+                  </tbody>
+                </table>
+                <% } else { %>
+                  <div class="alert alert-info" role="alert">
+                    No hay productos para mostrar
+                  </div>
+                  
+                <% } %>
+
+
+                
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <%- include('./partials/scripts') %>
+
+  </body>
+
+</html>

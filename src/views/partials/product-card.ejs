@@ -1,0 +1,21 @@
+<section class="body__main__section">
+    <div class="body__main__section--producto">
+        <div class="body__main__section__article--img">
+            <img src="images/<%= mainImage %>" alt="producto 1" class="imagen--principal">
+            <img src="/images/<%= category === " barato" ? "img-descuento.png" : category==="romantico"
+                ? "img-gratis.png" : "img-nuevo.png" %>" alt="nuevo" class="imagen--promo">
+            <a href="">ampliar foto</a>
+        </div>
+        <div class="body__main__section__article--descripcion">
+            <h3>
+                <%= name %>
+            </h3>
+            <p>
+                <%= description %>
+            </p>
+        </div>
+        <div class="body__main__section__article--descripcion--a">
+            <a href="/productos/detalle/<%= id %>">ver más</a>
+        </div>
+    </div>
+</section>

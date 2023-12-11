@@ -13,9 +13,11 @@
 
     <main class="body__main">
 
-        <% for( let i = 0; i < 6; i++ ) { %>
-            <%- include('./partials/product-cart') %>        
-        <% } %>
+        <% products.forEach(product => { %>
+            <%- include('./partials/product-card', {
+                ...product
+            }) %>         
+        <% }) %>
        
     </main>
 
