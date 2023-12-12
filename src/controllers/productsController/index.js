@@ -10,6 +10,10 @@ module.exports = {
     
     search : require("./search"),
 
-    create : require("./create")
+    create : require("./create"),
+
+    remove : require("./remove"),
+
+    update : require("./update")
 
 }
