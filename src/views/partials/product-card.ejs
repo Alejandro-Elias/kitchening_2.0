@@ -1,7 +1,7 @@
 <section class="body__main__section">
     <div class="body__main__section--producto">
         <div class="body__main__section__article--img">
-            <img src="images/<%= mainImage %>" alt="producto 1" class="imagen--principal">
+            <img src="/images/<%= mainImage ? mainImage : 'default.png' %>" alt="producto 1" class="imagen--principal">
             <img src="/images/<%= category === " barato" ? "img-descuento.png" : category==="romantico"
                 ? "img-gratis.png" : "img-nuevo.png" %>" alt="nuevo" class="imagen--promo">
             <a href="">ampliar foto</a>

@@ -15,7 +15,7 @@
             background-color: beige;">
                <div class="card-body d-flex flex-wrap gap-4">
                 <div>
-                    <img src="/images/<%= mainImage %>" alt="">
+                    <img src="/images/<%= mainImage ? mainImage : 'default.png' %>" alt="">
                 </div>
                 <div>
                     <h3><%= name %></h3>
